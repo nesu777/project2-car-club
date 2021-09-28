@@ -5,8 +5,10 @@ const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 require('dotenv').config()
 const PORT = process.env.PORT
+const bodyParser = require('body-parser')
+const router = express.Router()
 
-const Products = require('./models/products.js')
+const Vehicles = require('./models/vehicles.js')
 
 //  Connect to DataBase
 const MONGODB_URI = process.env.MONGODB_URI
@@ -25,25 +27,22 @@ db.on('connected', () => {
 db.on('disconnected', () => {
 	console.log('mongoose disconnected to', MONGODB_URI);
 })
-db.on('error', (error) => {
+db.on('error', (err) => {
 	console.log('mongoose error', error);
 })
 
 // Middleware
-app.use(express.static('css'))
-app.use(express.urlencoded({extended: false}))
+app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/pictures'))
+app.use(express.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
 
 // connect controllers
-const productsController = require('./controllers/productsController.js')
+const vehicleController = require('./controllers/vehiclesController.js')
 app.use('/vehicles', vehicleController)
 
-// home page for testing
-//app.get('/', (req,res) => {
-//	res.render('index.ejs')
-//})
-
-// listner
 app.listen(PORT, () => {
 	console.log('listening on port:', PORT);
 })
+
