@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 
   Vehicles.find({}, (err, allVehicles) => {
     res.render('index.ejs', {
-      vehicles: allVehicles
+      Vehicles: allVehicles
     })
   })
 
@@ -31,9 +31,11 @@ router.get('/login', (req, res) => {
 })
 
 //award designs ROUTE "awardshow.ejs"
-router.get('/awardshow', (req, res) => {
-    res.render('awardshow.ejs')
-})
+/*router.get('/awardshow', (req, res) => {
+    res.render('awardshow.ejs', {
+      Vehicles: foundVehicle
+    })
+})*/
 
 //new ROUTE "new.ejs"
 router.get('/new', (req, res) => {
@@ -44,12 +46,14 @@ router.get('/seed', (req, res) => {
 
   Vehicles.create([
     {
+      type: 'classics',
       name: '67 Mustang',
-      img: '../pictures/67 fastback green.jpeg'
+      img: '/67 fastback green.jpeg'
     },
     {
+      type: 'award',
       name: 'BMW Motorcycle',
-      img: '../pictures/bmw-r1250gs-custom (1).jpg'
+      img: '/bmw-r1250gs-custom (1).jpg'
     },
   ], (err, data) => {
     if (err) {
@@ -63,7 +67,18 @@ router.get('/seed', (req, res) => {
 router.get('/:id', (req, res) => {
   Vehicles.findById(req.params.id, (err, foundVehicle) => {
     console.log(foundVehicle)
-    res.render('show.ejs', { vehicles: foundVehicle })
+    if(foundVehicle.type == 'award')
+    {
+      res.render('awardshow.ejs', { 
+        foundVehicle: foundVehicle 
+      })
+    }
+    else
+    {
+      res.render('classics.ejs', {
+        foundVehicle: foundVehicle
+      })
+    }
   })
 })
 
