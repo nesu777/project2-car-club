@@ -30,6 +30,11 @@ router.get('/login', (req, res) => {
     res.render('login.ejs')
 })
 
+//award designs ROUTE "awardshow.ejs"
+router.get('/awardshow', (req, res) => {
+    res.render('awardshow.ejs')
+})
+
 //new ROUTE "new.ejs"
 router.get('/new', (req, res) => {
   res.render('new.ejs')

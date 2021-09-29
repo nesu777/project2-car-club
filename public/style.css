@@ -2,7 +2,8 @@
 /* Body */
 body {
 	font-family: source-sans-pro;
-	background-color: #f2f2f2;
+	/*background-color: #f2f2f2;*/
+	background-image: linear-gradient(180deg, #B3B3B3, #F2F2F2, #B3B3B3);
 	margin-top: 0px;
 	margin-right: 0px;
 	margin-bottom: 0px;
@@ -147,6 +148,7 @@ ul li:hover a {
 	display: inline-block;
 	background-color: #FFFFFF;
 	margin-top: 0px;
+	margin-right: 40px;
 }
 .contactbox {
 	margin-left: 500px;
@@ -219,10 +221,10 @@ input {
 }
 
 .clubhouse {
-	height: 280px; 
-	width: 515px; 
-	margin-left: 50px;
-	margin-top: -110px;
+	height: 340px; 
+	width: 635px; 
+	margin-left: 40px;
+	margin-top: -135px;
 }
 .parallax_description {
 	color: #FFFFFF;
