@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const { Schema , model } = mongoose
+mongoose.connect( process.env.MONGODB_URI || "YOUR CURRENT LOCALHOST DB CONNECTION STRING HERE" );
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#object_destructuring
 
 const vehicleSchema = new Schema({
