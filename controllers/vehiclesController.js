@@ -71,11 +71,8 @@ router.get('/seed', (req, res) => {
 router.get('/allcars', (req, res) => {
   Vehicles.find(req.params.id, (err, foundVehicles) => {
     console.log(foundVehicles)
-    // console.log(req.params.id)
-    let id = req.params.id
       res.render('allcars.ejs', { 
-        foundVehicles: foundVehicles,
-        id: id
+        foundVehicles: foundVehicles
   })
 })
 })
@@ -95,6 +92,26 @@ router.get('/:id', (req, res) => {
       res.render('classics.ejs', {
         foundVehicle: foundVehicle
       })
+    }
+  })
+})
+
+// set up POST ROUTE "Create"
+router.post('/', (req, res) => {
+  if (req.body.readyToRent === "on") {
+    req.body.readyToRent = true
+  } else {
+    req.body.readyToRent = false
+  }
+  console.log(req.body)
+  // res.send(req.body)
+  Vehicles.create(req.body, (err, createdVehicle) => {
+    if (err) {
+      console.log(err)
+      res.send(err)
+    } else {
+      console.log(createdVehicle)
+      res.redirect('/vehicles/allcars')
     }
   })
 })

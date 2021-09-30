@@ -129,6 +129,15 @@ ul li:hover a {
 	padding-top: 165px;
 	padding-bottom: 150px;
 }
+.heroNew {
+	/*background-color: #B3B3B3;*/
+	background-image: url("/emptyGarage.jpg"); /*garage*/
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 80%;
+	padding-top: 165px;
+	padding-bottom: 150px;
+}
 .light {
 	font-weight: bold;
 	color: #717070;

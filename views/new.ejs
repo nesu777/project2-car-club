@@ -1,14 +1,21 @@
 <%- include('./header.ejs') %>
-
-	<h1>New Car Page</h1>
-
-	<form action="/vehicles" method="POST">
+<!-- Hero Section -->
+  <section class="heroNew" id="hero">
+    <a href="#" style="text-decoration: none;"><h2 class="hero_header" >New Vehicle<span class="light">&nbsp;</span></h2></a>
+	  <a href="#" style="text-decoration: none"><p class="tagline">The collection continues to grow</p></a>
+  </section>
+  <!-- About Section -->
+  <section class="showNew" id="show">
+	  <div class="showbox">
+    <h1>New Vehicle Page</h1>
+    <form action="/vehicles" method="POST">
 	  Type: <input type="text" name="type" /> <br/>	
       Name: <input type="text" name="name" /> <br/>
-      img:  <input type="text" name="img" /> <br/>
+      Image url:  <input type="text" name="img" /> <br/>
       Available to Rent:  <input type="checkbox" name="readyToRent"> <br/>
 
       <input type="submit" value="Add Car" />
     </form>
-
+	  </div>
+  </section>
 <%- include('./footer.ejs') %>

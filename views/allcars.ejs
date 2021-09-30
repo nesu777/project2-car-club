@@ -1,8 +1,8 @@
 <%- include('./header.ejs') %>
   <!-- Hero Section -->
   <section class="heroShow" id="hero">
-    <a href="#" style="text-decoration: none;"><h2 class="hero_header" >Classic Car Collection<span class="light">&nbsp;</span></h2></a>
-	  <a href="#" style="text-decoration: none"><p class="tagline">Designs that stand the test of time</p></a>
+    <a href="#" style="text-decoration: none;"><h2 class="hero_header" >Complete Collection<span class="light">&nbsp;</span></h2></a>
+	  <a href="#" style="text-decoration: none"><p class="tagline">"You won't know until you drive it" -Unknown</p></a>
   </section>
   <!-- About Section -->
   <section class="show" id="show">
@@ -11,8 +11,9 @@
     	<% for (let i = 0; i < foundVehicles.length; i++) { %>
         <% let currVehicle = foundVehicles[i] %>
     	<h2><strong><a href ="#" style="text-decoration: none; color: #000000;"> 
-        <%= currVehicle.name %> </a></strong></h2><br><br>
-    	<img src="<%= currVehicle.img %>" style="width: 500px;">
+        <%= currVehicle.name %> </a></strong></h2>
+        <h3><a href="#"><%= currVehicle.type[0].toUpperCase() + currVehicle.type.slice(1)%></a></h3>
+    	<img src="<%= currVehicle.img %>" style="width: 500px; border-radius: 10px;">
 	  <br><br><br>
 		<% } %>
 	  </div>
