@@ -116,4 +116,18 @@ router.post('/', (req, res) => {
   })
 })
 
+// setting up our DELETE route
+router.delete('/:id', (req, res) => {
+  Vehicles.findByIdAndDelete(req.params.id, (err, deletedVehicle) => {
+    // findByIdAndDelete will delete a document with a given id
+    if (err) {
+      console.log(err)
+      res.send(err)
+    } else {
+     // redirect to the index page if the delete successful
+     res.redirect('/vehicles/allcars')
+    }
+  })
+})
+
 module.exports = router

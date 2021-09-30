@@ -14,6 +14,9 @@
         <%= currVehicle.name %> </a></strong></h2>
         <h3><a href="#"><%= currVehicle.type[0].toUpperCase() + currVehicle.type.slice(1)%></a></h3>
     	<img src="<%= currVehicle.img %>" style="width: 500px; border-radius: 10px;">
+      <form action="/vehicles/<%= currVehicle.id %>?_method=DELETE" method="POST">
+            <button>DELETE</button>
+          </form>
 	  <br><br><br>
 		<% } %>
 	  </div>
