@@ -51,6 +51,11 @@ router.get('/seed', (req, res) => {
       img: '/67 fastback green.jpeg'
     },
     {
+      type: 'classics',
+      name: '71 Skyline',
+      img: '/dsc00024-1140x703-555cdab134ab3.jpg'
+    },
+    {
       type: 'award',
       name: 'BMW Motorcycle',
       img: '/bmw-r1250gs-custom (1).jpg'
@@ -63,14 +68,26 @@ router.get('/seed', (req, res) => {
   })
 })
 
+router.get('/allcars', (req, res) => {
+  Vehicles.find(req.params.id, (err, foundVehicles) => {
+    console.log(foundVehicles)
+    // console.log(req.params.id)
+    let id = req.params.id
+      res.render('allcars.ejs', { 
+        foundVehicles: foundVehicles,
+        id: id
+  })
+})
+})
 
 router.get('/:id', (req, res) => {
   Vehicles.findById(req.params.id, (err, foundVehicle) => {
     console.log(foundVehicle)
+    console.log(req.params.id)
     if(foundVehicle.type == 'award')
     {
       res.render('awardshow.ejs', { 
-        foundVehicle: foundVehicle 
+        foundVehicle: foundVehicle, 
       })
     }
     else

@@ -42,7 +42,11 @@ app.use(methodOverride('_method'))
 const vehicleController = require('./controllers/vehiclesController.js')
 app.use('/vehicles', vehicleController)
 
-app.listen(PORT, () => {
-	console.log('listening on port:', PORT);
-})
+// app.listen(PORT, () => {
+// 	console.log('listening on port:', PORT);
+// })
+
+app.listen(process.env.PORT || 3000)
+
+
 
