@@ -1,0 +1,14 @@
+<%- include('./header.ejs') %>
+
+	<h1>New Car Page</h1>
+
+	<form action="/vehicles" method="POST">
+	  Type: <input type="text" name="type" /> <br/>	
+      Name: <input type="text" name="name" /> <br/>
+      img:  <input type="text" name="img" /> <br/>
+      Available to Rent:  <input type="checkbox" name="readyToRent"> <br/>
+
+      <input type="submit" value="Add Car" />
+    </form>
+
+<%- include('./footer.ejs') %>
