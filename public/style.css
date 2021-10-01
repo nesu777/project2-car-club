@@ -216,6 +216,15 @@ ul li:hover a {
 	padding-right: 20px;
 	display: block;	
 }
+.new_column {
+	margin-left: 500px;
+	padding-left: 20px;
+	padding-right: 20px;
+	display: block;	
+}
+.new_column input {
+	width: 35%;
+}
 .showbox {
 	margin-left: 50px;
 	padding-left: 20px;
@@ -223,7 +232,7 @@ ul li:hover a {
 	display: block;
 }
 input {
-	font-size: 14px;
+	font-size: 16px;
 }
 
 /* Show */

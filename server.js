@@ -9,7 +9,7 @@ const bodyParser = require('body-parser')
 const router = express.Router()
 
 const Vehicles = require('./models/vehicles.js')
-
+const User = require('./models/user.js')
 //  Connect to DataBase
 const MONGODB_URI = process.env.MONGODB_URI
 mongoose.connect(MONGODB_URI, {
@@ -41,7 +41,8 @@ app.use(methodOverride('_method'))
 // connect controllers
 const vehicleController = require('./controllers/vehiclesController.js')
 app.use('/vehicles', vehicleController)
-
+const userController = require('./controllers/userController.js')
+app.use('/register', userController)
 // app.listen(PORT, () => {
 // 	console.log('listening on port:', PORT);
 // })

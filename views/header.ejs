@@ -24,7 +24,11 @@
         <li><a href="/vehicles/new">ADD NEW</a></li>
         <li><a href="/vehicles/about">ABOUT</a></li>
         <li> <a href="/vehicles/contact">CONTACT</a></li>
-		    <li><a href="/vehicles/login">LOGIN</a></li>
+        <% if (1 < 2) {%>
+		      <li><a href="/vehicles/login">LOGIN</a></li>
+        <% } else {%>
+          <li><a href="/login">User ( )</a></li>
+          <% }%>
       </ul>
     </nav>
   </header>

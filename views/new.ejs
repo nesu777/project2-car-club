@@ -6,14 +6,20 @@
   </section>
   <!-- About Section -->
   <section class="showNew" id="show">
-	  <div class="showbox">
-    <h1>New Vehicle Page</h1>
+	  <div class="new_column">
+    <h1>New Vehicle Page</h1><br><br>
     <form action="/vehicles" method="POST">
-	  Type: <input type="text" name="type" /> <br>	
-      Name: <input type="text" name="name" /> <br>
-      Image url:  <input type="text" name="img" /> <br>
-      Image 2 url: <input type="text" name="img2" /> <br>
-      Available to Rent:  <input type="checkbox" name="readyToRent"> <br/>
+	  <!-- <input type="text" name="type" placeholder="Type: award, classics, track, chopper" />  -->
+	  <select style="font-size: 16px;" type="text" name="type">
+      <option value="award">Award Winning Design</option>
+      <option value="classics">Classics</option>
+      <option value="track">Track Oriented</option>
+      <option value="classic">Choppers</option>
+    </select><br><br>	
+      <input type="text" name="name" placeholder="Vehicle Name" /> <br><br>
+      <input type="text" name="img" placeholder="Image url" /> <br><br>
+      <input type="text" name="img2" placeholder="Image 2 url" /> <br><br>
+      Available to Rent:  <input type="checkbox" name="readyToRent"> <br><br>
 
       <input type="submit" value="Add Vehicle" />
     </form>
