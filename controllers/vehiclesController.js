@@ -4,7 +4,7 @@ const router = express.Router()
 // the path will be different from server.js
 const Vehicles = require('../models/vehicles')
 
-//index ROUTE "index.ejs"
+// set up index Route "index.ejs"
 router.get('/', (req, res) => {
 
   Vehicles.find({}, (err, allVehicles) => {
@@ -15,29 +15,22 @@ router.get('/', (req, res) => {
 
 })
 
-//about ROUTE "about.ejs"
+//set up about Route "about.ejs"
 router.get('/about', (req, res) => {
     res.render('about.ejs')
 })
 
-//contact ROUTE "contact.ejs"
+// set up contact Route "contact.ejs"
 router.get('/contact', (req, res) => {
     res.render('contact.ejs')
 })
 
-//login ROUTE "login.ejs"
+// set up login Route "login.ejs"
 router.get('/login', (req, res) => {
     res.render('login.ejs')
 })
 
-//award designs ROUTE "awardshow.ejs"
-/*router.get('/awardshow', (req, res) => {
-    res.render('awardshow.ejs', {
-      Vehicles: foundVehicle
-    })
-})*/
-
-//new ROUTE "new.ejs"
+// set up new Route "new.ejs"
 router.get('/new', (req, res) => {
   res.render('new.ejs')
 })
@@ -68,6 +61,7 @@ router.get('/seed', (req, res) => {
   })
 })
 
+// set up index of cars Route "allcars.ejs"
 router.get('/allcars', (req, res) => {
   Vehicles.find(req.params.id, (err, foundVehicles) => {
     console.log(foundVehicles)
@@ -77,6 +71,7 @@ router.get('/allcars', (req, res) => {
 })
 })
 
+// set up Show Route
 router.get('/:id', (req, res) => {
   Vehicles.findById(req.params.id, (err, foundVehicle) => {
     console.log(foundVehicle)
@@ -87,16 +82,28 @@ router.get('/:id', (req, res) => {
         foundVehicle: foundVehicle, 
       })
     }
-    else
+    else if(foundVehicle.type == 'classics')
     {
       res.render('classics.ejs', {
+        foundVehicle: foundVehicle
+      })
+    }
+    else if(foundVehicle.type == 'track')
+    {
+      res.render('track.ejs', {
+        foundVehicle: foundVehicle
+      })
+    }
+    else if(foundVehicle.type == 'chopper')
+    {
+      res.render('chopper.ejs', {
         foundVehicle: foundVehicle
       })
     }
   })
 })
 
-// set up POST ROUTE "Create"
+// set up POST Route "Create"
 router.post('/', (req, res) => {
   if (req.body.readyToRent === "on") {
     req.body.readyToRent = true
@@ -116,18 +123,49 @@ router.post('/', (req, res) => {
   })
 })
 
-// setting up our DELETE route
+// set up DELETE Route
 router.delete('/:id', (req, res) => {
   Vehicles.findByIdAndDelete(req.params.id, (err, deletedVehicle) => {
-    // findByIdAndDelete will delete a document with a given id
     if (err) {
       console.log(err)
       res.send(err)
     } else {
-     // redirect to the index page if the delete successful
      res.redirect('/vehicles/allcars')
     }
   })
+})
+
+// set up EDIT Route 
+router.get('/:id/edit', (req, res) => {
+  Vehicles.findById(req.params.id, (err, foundVehicle) => {
+    if (err) {
+      console.log(err)
+      res.send(err)
+    } else {
+      res.render('edit.ejs', {
+        foundVehicle: foundVehicle,
+      })
+    }
+  })
+})
+
+router.put('/:id', (req, res) => {
+  req.body.readyToRent = (req.body.readyToRent === 'on')
+  Vehicles.findByIdAndUpdate(
+    req.params.id, 
+    req.body,
+    {
+      new: true,
+    },
+    (err, updatedVehicle) => {
+      if (err) {
+        console.log(err)
+        res.send(err)
+      } else {
+        // redirect to the index route
+        res.redirect('/vehicles/allcars')
+      }
+    } )
 })
 
 module.exports = router

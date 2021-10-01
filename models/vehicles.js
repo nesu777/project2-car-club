@@ -7,6 +7,7 @@ const vehicleSchema = new Schema({
   type: {type:String, required: true},
   name: {type: String, required: true},
   img: {type: String, required: true},
+  img2: {type: String, required: true},
   readyToRent: {type: Boolean, default: false}
 })
 

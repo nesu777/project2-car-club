@@ -120,9 +120,18 @@ ul li:hover a {
 	padding-top: 165px;
 	padding-bottom: 150px;
 }
+.heroAll {
+	/*background-color: #B3B3B3;*/
+	background-image: url("/museumcollection.jpeg"); /*garage*/
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+	padding-top: 165px;
+	padding-bottom: 150px;
+}
 .heroAward {
 	/*background-color: #B3B3B3;*/
-	background-image: url("/classicgarage.jpeg"); /*garage*/
+	background-image: url("/designawardback.jpg"); /*Mrecedes Vision*/
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 50% 80%;
@@ -131,10 +140,28 @@ ul li:hover a {
 }
 .heroNew {
 	/*background-color: #B3B3B3;*/
-	background-image: url("/emptyGarage.jpg"); /*garage*/
+	background-image: url("/emptyGarage.jpg"); /*Empty Empty*/
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 50% 80%;
+	padding-top: 165px;
+	padding-bottom: 150px;
+}
+.heroTrack {
+	/*background-color: #B3B3B3;*/
+	background-image: url("/stigstanding.jpeg"); /*The Stig*/
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 0%;
+	padding-top: 165px;
+	padding-bottom: 150px;
+}
+.heroChopper {
+	/*background-color: #B3B3B3;*/
+	background-image: url("/easyrider.jpeg"); /*The Stig*/
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 70%;
 	padding-top: 165px;
 	padding-bottom: 150px;
 }
@@ -190,7 +217,7 @@ ul li:hover a {
 	display: block;	
 }
 .showbox {
-	margin-left: 200px;
+	margin-left: 50px;
 	padding-left: 20px;
 	padding-right: 20px;
 	display: block;
@@ -209,6 +236,38 @@ input {
 	margin-top: 0px;
 	margin-right: 0px;
 }
+/*.show {
+	padding-left: 125px;
+	padding-right: 25px;
+	padding-top: 35px;
+	display: block;
+	background-color: #FFFFFF;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+}*/
+.showAll {
+	padding-left: 125px;
+	padding-right: 25px;
+	padding-top: 35px;
+	display: block;
+	background-color: #FFFFFF;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+/* Rental Status */
+.rentNo {
+	color: darkred;
+	font-size: 20px;
+	font-weight: bold;
+}
+.rentYes {
+	color: darkgreen;
+	font-size: 20px;
+	font-weight: bold;
+}
+
 /* Stats Gallery */
 .stats {
 	color: #717070;

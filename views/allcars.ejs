@@ -1,22 +1,34 @@
 <%- include('./header.ejs') %>
   <!-- Hero Section -->
-  <section class="heroShow" id="hero">
+  <section class="heroAll" id="hero">
     <a href="#" style="text-decoration: none;"><h2 class="hero_header" >Complete Collection<span class="light">&nbsp;</span></h2></a>
-	  <a href="#" style="text-decoration: none"><p class="tagline">"You won't know until you drive it" -Unknown</p></a>
-  </section>
+	  <a href="#" style="text-decoration: none"><p class="tagline">"You won't know until you drive it"</p></a>
+  </section><br><br>
+  <h2 class="aboutHeader">All Cars</h2>
   <!-- About Section -->
-  <section class="show" id="show">
+  <section class="showAll" id="show">
 	  <div class="showbox">
-    <h2 class="aboutHeader">All Cars</h2>
+    
     	<% for (let i = 0; i < foundVehicles.length; i++) { %>
         <% let currVehicle = foundVehicles[i] %>
     	<h2><strong><a href ="#" style="text-decoration: none; color: #000000;"> 
         <%= currVehicle.name %> </a></strong></h2>
-        <h3><a href="#"><%= currVehicle.type[0].toUpperCase() + currVehicle.type.slice(1)%></a></h3>
-    	<img src="<%= currVehicle.img %>" style="width: 500px; border-radius: 10px;">
+        <h3><a hhref ="#" style="text-decoration: none; color: #000000;"><%= currVehicle.type[0].toUpperCase() + currVehicle.type.slice(1)%></a></h3>
+
+    	<img src="<%= currVehicle.img %>" style="width: 500px; border-radius: 15px; margin-right: 50px;">
+      <img src="<%= currVehicle.img2 %>" style="width: 500px; border-radius: 15px;">
+       <div class="showbox" style="width: 500px;">
+        <%if (currVehicle.readyToRent == false) {%> 
+        <p class="rentNo">Not Available</p>
+          <% } else {%>
+          <p class="rentYes">Available</p>
+          <% } %>
+          </div>
+      <!-- make second image imgTwo -->
       <form action="/vehicles/<%= currVehicle.id %>?_method=DELETE" method="POST">
             <button>DELETE</button>
           </form>
+          <button><a href="/vehicles/<%= currVehicle.id %>/edit" style="text-decoration: none; color: #000000;">EDIT</a></button>
 	  <br><br><br>
 		<% } %>
 	  </div>
