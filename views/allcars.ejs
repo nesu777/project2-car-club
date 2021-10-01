@@ -4,7 +4,7 @@
     <a href="#" style="text-decoration: none;"><h2 class="hero_header" >Complete Collection<span class="light">&nbsp;</span></h2></a>
 	  <a href="#" style="text-decoration: none"><p class="tagline">"You won't know until you drive it"</p></a>
   </section><br><br>
-  <h2 class="aboutHeader">All Cars</h2>
+  <h2 class="aboutHeader">All Vehicles</h2>
   <!-- About Section -->
   <section class="showAll" id="show">
 	  <div class="showbox">
@@ -15,8 +15,8 @@
         <%= currVehicle.name %> </a></strong></h2>
         <h3><a hhref ="#" style="text-decoration: none; color: #000000;"><%= currVehicle.type[0].toUpperCase() + currVehicle.type.slice(1)%></a></h3>
 
-    	<img src="<%= currVehicle.img %>" style="width: 500px; border-radius: 15px; margin-right: 50px;">
-      <img src="<%= currVehicle.img2 %>" style="width: 500px; border-radius: 15px;">
+    	<img src="<%= currVehicle.img %>" style="width: 500px; height: 300px;border-radius: 15px; margin-right: 50px;">
+      <img src="<%= currVehicle.img2 %>" style="width: 500px; height: 300px;border-radius: 15px;">
        <div class="showbox" style="width: 500px;">
         <%if (currVehicle.readyToRent == false) {%> 
         <p class="rentNo">Not Available</p>
@@ -25,10 +25,11 @@
           <% } %>
           </div>
       <!-- make second image imgTwo -->
-      <form action="/vehicles/<%= currVehicle.id %>?_method=DELETE" method="POST">
+          <button><a href="/vehicles/<%= currVehicle.id %>/edit" style="text-decoration: none; color: #000000;">EDIT</a></button><br><br>
+          <button><a href="#" style="text-decoration: none; color: #000000;">RENT</a></button><br><br>
+          <form action="/vehicles/<%= currVehicle.id %>?_method=DELETE" method="POST">
             <button>DELETE</button>
-          </form>
-          <button><a href="/vehicles/<%= currVehicle.id %>/edit" style="text-decoration: none; color: #000000;">EDIT</a></button>
+          </form><br>
 	  <br><br><br>
 		<% } %>
 	  </div>
