@@ -1,4 +1,4 @@
-<%- include('./header.ejs') %>
+<%- include('../header.ejs') %>
   <!-- Hero Section -->
   <section class="heroLogin" id="hero">
     <a href="#contact" style="text-decoration: none;"><h2 class="hero_header" >Join the Club<span class="light">&nbsp;</span></h2></a>
@@ -16,14 +16,22 @@
 	  </div>
 	  <div class="login_column">
 		  <h2 class="aboutHeader">Create Account</h2>
-	  <form>
-      <input type="text" name="username" id="username">
-      <input type="text" name="username" id="username" placeholder="New Username"><br><br>
-      <input type="text" name="password" id="username" placeholder="New Password"><br><br>
-	  <input type="text" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password"><br><br>
-		  <button type="submit">Create Account</button>
-	  </form>
+	  <form action="/users/register" method="POST">
+		<fieldset>
+			<label for="username">Username:</label>
+			<input type="text" name="username" id="username">
+		</fieldset>
+		<fieldset>
+			<label for="password">Password:</label>
+			<input type="password" name="password" id="password">
+		</fieldset>
+		<fieldset>
+			<label for="verifyPassword">Verify Password:</label>
+			<input type="password" name="verifyPassword" id="verifyPassword">
+		</fieldset>
+		<input type="submit" value="Sign Up">
+	</form>
 	  </div>
   </section>
  
-  <%- include('./footer.ejs') %>
+  <%- include('../footer.ejs') %>

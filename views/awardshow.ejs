@@ -9,11 +9,13 @@
 	  <div class="showbox">
     <h2 class="aboutHeader">Award Winning Design</h2>
     <a href ="#"> <%= foundVehicle.name %> </a><br><br>
-    <img src="<%= foundVehicle.img %>" style="width: 500px; border-radius: 15px;">
+    <img src="<%= foundVehicle.img %>" style="width: 800px; border-radius: 15px;">
     <form action="/vehicles/<%= foundVehicle.id %>?_method=DELETE" method="POST">
             <button>DELETE</button>
           </form>
-          <button><a href="/vehicles/<%= foundVehicle.id %>/edit" style="text-decoration: none; color: #000000;">EDIT</a></button>
+    <form action="/vehicles/<%= foundVehicle.id %>/edit">
+            <button>EDIT</button>
+          </form>      
     <br><br><br>
 	  </div>
   </section>

@@ -11,6 +11,45 @@ body {
 	font-style: normal;
 	font-weight: 200;
 }
+button {
+	margin: 10px;
+	color: #FFFFFF;
+	padding: 10px;
+	background-color: #52bad5;
+	border-radius: 15px;
+	border: 1px solid #52bad5;
+	text-decoration: none;
+}
+button a {
+	margin: 10px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.deletebutton {
+	background-color: darkred;
+	border: 1px solid darkred;
+}
+.deletebutton:hover {
+	background-color: #FFFFFF;
+	color: darkred;
+	border: 1px solid darkred;
+}
+button:hover {
+	color: #52bad5;
+	padding: 10px;
+	background-color: #FFFFFF;
+	border-radius: 15px;
+	border: 1px solid #52bad5;
+	text-decoration: none;
+}
+button a:hover {
+	color: #52bad5;
+	text-decoration: none;
+}
+form {
+	margin: 0;
+	float: left;
+}
 /* Container */
 .container {
 	width: 90%;
@@ -147,6 +186,15 @@ ul li:hover a {
 	padding-top: 165px;
 	padding-bottom: 150px;
 }
+.heroEdit {
+	/*background-color: #B3B3B3;*/
+	background-image: url("/emptyGarage.jpg"); /*Empty Empty*/
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 80%;
+	padding-top: 165px;
+	padding-bottom: 150px;
+}
 .heroTrack {
 	/*background-color: #B3B3B3;*/
 	background-image: url("/stigstanding.jpeg"); /*The Stig*/
@@ -223,7 +271,9 @@ ul li:hover a {
 	display: block;	
 }
 .new_column input {
-	width: 35%;
+	align-content: center;
+	width: 150%;
+	padding: 5px;
 }
 .showbox {
 	margin-left: 50px;
@@ -403,12 +453,21 @@ footer .footer_column p {
 	font-weight: bold;
 	letter-spacing: 2px;
 	border: 3px solid #FFFFFF;
-	color: #FFFFFF;
+	color: #C4C4C4;
 	transition: all 0.3s linear;
+	background-color: #FEFEFE;
 }
 .button:hover {
-	background-color: #FEFEFE;
+	background-color: transparent;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+.button a {
+	text-decoration: none;
 	color: #C4C4C4;
+}
+.button a:hover {
+	color: #FFFFFF;
 	cursor: pointer;
 }
 .copyright {

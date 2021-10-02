@@ -25,14 +25,14 @@ router.get('/contact', (req, res) => {
     res.render('contact.ejs')
 })
 
-// set up login Route "login.ejs"
-router.get('/login', (req, res) => {
-    Vehicles.find({}, (err, allVehicles) => {
-    res.render('login.ejs', {
-      Vehicles: allVehicles
-    })
-  })
-})
+// // set up login Route "login.ejs"
+// router.get('/login', (req, res) => {
+//     Vehicles.find({}, (err, allVehicles) => {
+//     res.render('login.ejs', {
+//       Vehicles: allVehicles
+//     })
+//   })
+// })
 
 // set up new Route "new.ejs"
 router.get('/new', (req, res) => {

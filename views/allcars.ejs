@@ -13,24 +13,32 @@
         <% let currVehicle = foundVehicles[i] %>
     	<h2><strong><a href ="#" style="text-decoration: none; color: #000000;"> 
         <%= currVehicle.name %> </a></strong></h2>
-        <h3><a hhref ="#" style="text-decoration: none; color: #000000;"><%= currVehicle.type[0].toUpperCase() + currVehicle.type.slice(1)%></a></h3>
+        <h3><a href ="#" style="text-decoration: none; color: #000000;"><%= currVehicle.type[0].toUpperCase() + currVehicle.type.slice(1)%></a></h3>
 
     	<img src="<%= currVehicle.img %>" style="width: 500px; height: 300px;border-radius: 15px; margin-right: 50px;">
-      <img src="<%= currVehicle.img2 %>" style="width: 500px; height: 300px;border-radius: 15px;">
-       <div class="showbox" style="width: 500px;">
+      <img src="<%= currVehicle.img2 %>" style="width: 500px; height: 300px;border-radius: 15px;"><br><br>
+       <div class="showbox" style="width: 500px; border: 1px solid #52bad5; border-radius: 15px;">
+        <p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
         <%if (currVehicle.readyToRent == false) {%> 
-        <p class="rentNo">Not Available</p>
+        <h4 class="rentNo">Not Available for Rent</h4>
           <% } else {%>
-          <p class="rentYes">Available</p>
+          <h4 class="rentYes">Available for Rent</h4>
           <% } %>
-          </div>
+          </div><br>
       <!-- make second image imgTwo -->
-          <button><a href="/vehicles/<%= currVehicle.id %>/edit" style="text-decoration: none; color: #000000;">EDIT</a></button><br><br>
-          <button><a href="#" style="text-decoration: none; color: #000000;">RENT</a></button><br><br>
+          <form action="/vehicles/<%= currVehicle.id %>/edit">
+            <button>EDIT</button>
+          </form>
+          <% if (currVehicle.readyToRent == true) { %>
+          <form>
+            <button>RENT</button>
+          </form>
+          <% } %>
           <form action="/vehicles/<%= currVehicle.id %>?_method=DELETE" method="POST">
-            <button>DELETE</button>
-          </form><br>
+            <button class="deletebutton">DELETE</button>
+          </form>
 	  <br><br><br>
+    <br><br><br>
 		<% } %>
 	  </div>
   </section>

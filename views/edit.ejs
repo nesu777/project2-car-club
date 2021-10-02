@@ -1,20 +1,20 @@
 <%- include('./header.ejs') %>
 <!-- Hero Section -->
-  <section class="heroNew" id="hero">
-    <a href="#" style="text-decoration: none;"><h2 class="hero_header" >New Vehicle<span class="light">&nbsp;</span></h2></a>
-    <a href="#" style="text-decoration: none"><p class="tagline">The collection continues to grow</p></a>
+  <section class="heroEdit" id="hero">
+    <a href="#" style="text-decoration: none;"><h2 class="hero_header" >Edit Vehicle<span class="light">&nbsp;</span></h2></a>
+    <a href="#" style="text-decoration: none"><p class="tagline">Make Changes Below</p></a>
   </section>
   <!-- About Section -->
   <section class="showNew" id="show">
-    <div class="showbox">
-    <h1>New Vehicle Page</h1>
+    <div class="new_column">
+    <h1>Edit Vehicle</h1>
     <form action="/vehicles/<%= foundVehicle.id %>?_method=PUT" method="POST">
-      Type: <input type="text" name="type" placeholder="<%=foundVehicle.type%>" required="required"/> <br> 
-      Name: <input type="text" name="name" placeholder="<%=foundVehicle.name%>" required="required"/> <br>
-      Image url:  <input type="text" name="img" placeholder="<%=foundVehicle.img%>" required="required"/> <br>
-      Image 2 url:  <input type="text" name="img2" placeholder="<%=foundVehicle.img2%>" required="required"/> <br>
-      Available to Rent:  <input type="checkbox" name="readyToRent" checked="checked"> <br/>
-
+      Type: <input type="text" name="type" value="<%=foundVehicle.type%>" required="required"/> <br> 
+      Name: <input type="text" name="name" value="<%=foundVehicle.name%>" required="required"/> <br>
+      Image url:  <input type="text" name="img" value="<%=foundVehicle.img%>" required="required"/> <br>
+      Image 2 url:  <input type="text" name="img2" value="<%=foundVehicle.img2%>" required="required"/> <br>
+      Available to Rent:<input type="checkbox" name="readyToRent" checked="checked"> <br/>
+      <br><br>
       <input type="submit" value="Edit Vehicle" />
     </form>
     </div>
