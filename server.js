@@ -104,7 +104,7 @@ app.get('/destroy-session', (req, res) => {
 
 // connect controllers
 const vehicleController = require('./controllers/vehiclesController.js')
-app.use('/', vehicleController)
+app.use('/vehicles', vehicleController)
 const userController = require('./controllers/userController.js')
 app.use('/users', userController)
 // app.listen(PORT, () => {
