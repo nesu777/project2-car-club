@@ -29,15 +29,15 @@ https://fullstack-car-club.herokuapp.com/vehicles
 
 ## User Stories
 > User stories detailing app functionality<br />
->As a car enthusiast, I want to access to a database of exotic cars, so that I learn more about current and future cars
->As a car collector, I want online access to my cars location and use, so that I maintain my collection
->As a car club member, I want access to all the club cars , so that I can add my own vehicles and rent other members' 
->As a car enthusiast, I want to access to automotive events, so that I can meet more people with similar interests
+>As a car enthusiast, I want to access to a database of exotic cars, so that I learn more about current and future cars<br />
+>As a car collector, I want online access to my cars location and use, so that I maintain my collection<br />
+>As a car club member, I want access to all the club cars , so that I can add my own vehicles and rent other members'<br />
+>As a car enthusiast, I want to access to automotive events, so that I can meet more people with similar interests<br />
 ### MVP Goals
->Ability to create, edit, and delete cars in the club database
->Full database functionality
->Access to a basic account
->User friendly site with balanced CSS
+>Ability to create, edit, and delete cars in the club database<br />
+>Full database functionality<br />
+>Access to a basic account<br />
+>User friendly site with balanced CSS<br />
 ### Stretch Goals
->Google Maps plugin
->Email interaction
+>Google Maps plugin<br />
+>Email interaction<br />
