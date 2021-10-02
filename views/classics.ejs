@@ -13,7 +13,9 @@
     <form action="/vehicles/<%= foundVehicle.id %>?_method=DELETE" method="POST">
             <button>DELETE</button>
           </form>
-          <button><a href="/vehicles/<%= foundVehicle.id %>/edit" style="text-decoration: none; color: #000000;">EDIT</a></button>
+    <form action="/vehicles/<%= foundVehicle.id %>/edit">
+            <button>EDIT</button>
+          </form> 
 	  <br><br><br>
 	  </div>
   </section>
