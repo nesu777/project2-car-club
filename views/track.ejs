@@ -11,7 +11,7 @@
     <h2><strong><a href ="#" style="text-decoration: none; color: #000000;"> <%= foundVehicle.name %> </a></strong></h2><br><br>
     <img src="<%= foundVehicle.img %>" style="width: 700px; border-radius: 15px;">
     <form action="/vehicles/<%= foundVehicle.id %>?_method=DELETE" method="POST">
-            <button>DELETE</button>
+            <button class="deletebutton">DELETE</button>
           </form>
     <form action="/vehicles/<%= foundVehicle.id %>/edit">
             <button>EDIT</button>
