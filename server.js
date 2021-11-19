@@ -29,7 +29,7 @@ db.on('disconnected', () => {
 	console.log('mongoose disconnected to', MONGODB_URI);
 })
 db.on('error', (err) => {
-	console.log('mongoose error', error);
+	console.log('mongoose error', err);
 })
 
 // Middleware
