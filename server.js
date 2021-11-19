@@ -28,9 +28,9 @@ db.on('connected', () => {
 db.on('disconnected', () => {
 	console.log('mongoose disconnected to', MONGODB_URI);
 })
-db.on('error', (err) => {
-	console.log('mongoose error', error);
-})
+// db.on('error', (err) => {
+// 	console.log('mongoose error', error);
+// })
 
 // Middleware
 app.use(express.static(__dirname + '/public'))
