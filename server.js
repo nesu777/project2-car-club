@@ -107,9 +107,6 @@ const vehicleController = require('./controllers/vehiclesController.js')
 app.use('/vehicles', vehicleController)
 const userController = require('./controllers/userController.js')
 app.use('/users', userController)
-// app.listen(PORT, () => {
-// 	console.log('listening on port:', PORT);
-// })
 
 app.listen(process.env.PORT || 3000)
 
