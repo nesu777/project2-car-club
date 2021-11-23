@@ -24,7 +24,8 @@
   "description": "FullStack Car Club App (Node, Express, Mongoose, EJS)",
   "version": "1.0.0",
   "engines": {
-    "node": "14.17.1"
+    "node": "14.17.1",
+    "npm": "8.1.4"
   },
   "main": "server.js",
   "repository": {
